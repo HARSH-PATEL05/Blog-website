@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Future of Sustainable Cities | Urban Insights Blog</title>
+    <style>
+        
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --bg-color: #fff;
+            --surface-color: #f8f9fa;
+            --border-color: #dee2e6;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .dark-theme {
+            --primary-color: #ecf0f1;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #ecf0f1;
+            --bg-color: #1a1a1a;
+            --surface-color: #2d2d2d;
+            --border-color: #404040;
+            --shadow: 0 2px 10px rgba(0,0,0,0.3);
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        
+        header {
+            background: var(--gradient);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .site-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .site-description {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+    
+        nav {
+            background-color: var(--surface-color);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .theme-switch {
+            background: none;
+            border: 2px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .theme-switch:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        
+        main {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+    
+        article {
+            background-color: var(--surface-color);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .post-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .post-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .post-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .post-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+
+        
+        h2 {
+            color: var(--primary-color);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            margin: 1.5rem 0 0.75rem 0;
+            font-size: 1.4rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        blockquote {
+            background: linear-gradient(90deg, var(--secondary-color) 4px, transparent 4px);
+            padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--text-color);
+            border-radius: 5px;
+            position: relative;
+        }
+
+        blockquote::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            line-height: 1;
+        }
+
+        
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        code {
+            background-color: var(--bg-color);
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        pre {
+            background-color: var(--bg-color);
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        
+        figure {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        figcaption {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        
+        aside {
+            background-color: var(--surface-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .sidebar-section {
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-title {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .related-posts {
+            list-style: none;
+        }
+
+        .related-posts li {
+            margin-bottom: 0.75rem;
+            padding-left: 0;
+        }
+
+        .related-posts a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .related-posts a:hover {
+            color: var(--secondary-color);
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .tag:hover {
+            opacity: 0.8;
+        }
+
+
+        .comments-section {
+            background-color: var(--surface-color);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+        }
+
+        .comments-title {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .comment {
+            background-color: var(--bg-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .comment-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .comment-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .comment-content {
+            line-height: 1.6;
+        }
+
+        
+        footer {
+            background-color: var(--surface-color);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .post-title {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .post-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+            }
+            
+            .post-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body class="light-theme">
+    <header>
+        <div class="container">
+            <h1 class="site-title">Urban Insights</h1>
+            <p class="site-description">Exploring the future of cities and sustainable living</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Articles</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <button class="theme-switch" onclick="toggleTheme()">Switch to Dark Theme</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main>
+            <article>
+                <header class="post-header">
+                    <h1 class="post-title">The Future of Sustainable Cities: Transforming Urban Living for a Greener Tomorrow</h1>
+                    <div class="post-meta">
+                        <span>Published: August 22,2025</span>
+                        <span>Author: Harsh patel</span>
+                        <span>Category: Urban Planning</span>
+                    </div>
+                </header>
+
+                <figure>
+                    <img src="images/first photo.png" alt="Futuristic sustainable city with green buildings, solar panels, and vertical gardens integrated into modern architecture" class="post-image" onerror="this.style.display='none'">
+                    <figcaption>Concept art of a sustainable city integrating nature and technology</figcaption>
+                </figure>
+
+                <p>As urban populations continue to grow at an unprecedented rate, the need for sustainable city planning has never been more critical. Cities currently account for over 70% of global carbon emissions and consume 60-80% of the world's energy. However, they also present our greatest opportunity for creating sustainable solutions that can address climate change while improving quality of life.</p>
+
+                <h2>The Pillars of Sustainable Urban Development</h2>
+                <p>Sustainable cities are built on several key principles that work together to create resilient, efficient, and livable urban environments:</p>
+
+                <h3>Green Infrastructure</h3>
+                <p>Modern sustainable cities prioritize green spaces, parks, and urban forests. These natural elements not only improve air quality but also help manage stormwater, reduce the urban heat island effect, and provide recreational spaces for residents.</p>
+
+                <blockquote>
+                    "The sustainable city of the future isn't just about technology—it's about creating spaces where people and nature can thrive together in harmony." - Dr. sheetal, Urban Ecologist
+                </blockquote>
+
+                <h3>Renewable Energy Integration</h3>
+                <p>Forward-thinking cities are implementing district energy systems, solar panel installations on buildings, and geothermal heating solutions. Copenhagen, for example, aims to become carbon-neutral by 2025 through its extensive district heating system and wind power investments.</p>
+
+                <figure>
+                    <img src="images/second image.png" alt="Solar panel installation on modern building rooftop with city skyline in background" class="post-image" onerror="this.style.display='none'">
+                    <figcaption>Solar integration in urban architecture helps cities move toward energy independence</figcaption>
+                </figure>
+
+                <h3>Smart Transportation Networks</h3>
+                <p>Efficient public transportation, cycling infrastructure, and pedestrian-friendly streets are essential components. Cities like Amsterdam and Singapore demonstrate how integrated transport systems can dramatically reduce car dependency and emissions.</p>
+
+                <h2>Innovative Technologies Shaping Urban Sustainability</h2>
+                <p>Several cutting-edge technologies are revolutionizing how cities operate and manage resources:</p>
+
+                <ul>
+                    <li><strong>Smart Grids:</strong> Intelligent energy distribution systems that optimize electricity usage and integrate renewable sources</li>
+                    <li><strong>IoT Sensors:</strong> Networked devices that monitor air quality, traffic flow, waste management, and water usage</li>
+                    <li><strong>Green Building Materials:</strong> Sustainable construction materials with lower environmental impact</li>
+                    <li><strong>Urban Agriculture:</strong> Vertical farming and rooftop gardens that localize food production</li>
+                </ul>
+
+                <h2>Challenges and Opportunities</h2>
+                <p>While the path to sustainable urbanization presents challenges including funding, existing infrastructure constraints, and political will, the opportunities are immense. Sustainable cities offer:</p>
+
+                <ol>
+                    <li>Improved public health through reduced pollution</li>
+                    <li>Economic benefits from energy efficiency and green jobs</li>
+                    <li>Enhanced resilience to climate change impacts</li>
+                    <li>Better quality of life for all residents</li>
+                </ol>
+
+                <h2>Case Study: Singapore's Green Plan 2030</h2>
+                <p>Singapore has emerged as a global leader in sustainable urban development. Their comprehensive Green Plan 2030 includes ambitious targets:</p>
+
+                <pre><code>Key Targets:
+- Plant 1 million more trees
+- Reduce waste sent to landfill by 30%
+- Have 80% of buildings green by 2030
+- Increase solar energy deployment to 2 gigawatt-peak</code></pre>
+
+                <p>This holistic approach demonstrates how cities can set measurable, achievable sustainability goals while maintaining economic growth.</p>
+
+                <h2>Conclusion: Building the Cities of Tomorrow</h2>
+                <p>The transformation toward sustainable cities requires collaboration between governments, businesses, communities, and urban planners. By embracing innovation while respecting ecological limits, we can create urban environments that are not only sustainable but also vibrant, equitable, and prosperous for generations to come.</p>
+
+                <p>As we look to the future, the choices we make today in urban planning and development will shape the livability of our cities for decades. The sustainable city is no longer a distant ideal—it's an urgent necessity and an achievable reality.</p>
+            </article>
+
+            <aside>
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">About the Author</h3>
+                    <p>Mr Harsh Patel is an urban planner and sustainability expert with over 15 years of experience working on green city initiatives across Asia and Europe.</p>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Related Posts</h3>
+                    <ul class="related-posts">
+                        <li><a href="#">Smart Cities: How IoT is Transforming Urban Living</a></li>
+                        <li><a href="#">The Rise of Vertical Forests in Urban Architecture</a></li>
+                        <li><a href="#">Circular Economy: Reducing Waste in Modern Cities</a></li>
+                        <li><a href="#">Public Transportation Innovations Around the World</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Popular Tags</h3>
+                    <div class="tag-cloud">
+                        <a href="#" class="tag">Sustainability</a>
+                        <a href="#" class="tag">Urban Planning</a>
+                        <a href="#" class="tag">Green Tech</a>
+                        <a href="#" class="tag">Smart Cities</a>
+                        <a href="#" class="tag">Renewable Energy</a>
+                        <a href="#" class="tag">Architecture</a>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Subscribe</h3>
+                    <p>Get the latest articles on urban sustainability delivered to your inbox.</p>
+                    <form style="margin-top: 1rem;">
+                        <input type="email" placeholder="Your email" style="padding: 0.5rem; width: 100%; margin-bottom: 0.5rem; border: 1px solid var(--border-color); border-radius: 4px;">
+                        <button type="submit" style="background: var(--secondary-color); color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; width: 100%; cursor: pointer;">Subscribe</button>
+                    </form>
+                </div>
+            </aside>
+        </main>
+
+        <section class="comments-section">
+            <h2 class="comments-title">Comments (3)</h2>
+            
+            <div class="comment">
+                <div class="comment-header">
+                    <span class="comment-author">Michael </span>
+                    <span class="comment-date">August 22,2025</span>
+                </div>
+                <div class="comment-content">
+                    <p>great idea</p>
+                </div>
+            </div>
+
+            <div class="comment">
+                <div class="comment-header">
+                    <span class="comment-author">Priya </span>
+                    <span class="comment-date">August 22,2025</span>
+                </div>
+                <div class="comment-content">
+                    <p>Great article! I'd love to see more discussion about affordable housing in sustainable cities. </p>
+                </div>
+            </div>
+
+            <div class="comment">
+                <div class="comment-header">
+                    <span class="comment-author">Ram</span>
+                    <span class="comment-date">August 22,2025</span>
+                </div>
+                <div class="comment-content">
+                    <p>life changing</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            <p>© 2025 Urban Insights Blog. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Newsletter</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const themeButton = document.querySelector('.theme-switch');
+            
+            if (body.classList.contains('light-theme')) {
+                body.classList.remove('light-theme');
+                body.classList.add('dark-theme');
+                themeButton.textContent = 'Switch to Light Theme';
+            } else {
+                body.classList.remove('dark-theme');
+                body.classList.add('light-theme');
+                themeButton.textContent = 'Switch to Dark Theme';
+            }
+            
+            
+            localStorage.setItem('theme', body.classList.contains('dark-theme') ? 'dark' : 'light');
+        }
+
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeButton = document.querySelector('.theme-switch');
+            
+            if (savedTheme === 'dark') {
+                document.body.classList.remove('light-theme');
+                document.body.classList.add('dark-theme');
+                themeButton.textContent = 'Switch to Light Theme';
+            }
+        });
+    </script>
+</body>
+</html>
+
+
